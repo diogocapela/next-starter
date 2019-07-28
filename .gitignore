@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+
+# Testing
+coverage/
+
+# macOS
+*.DS_Store
+
+# JetBrains
+.idea/
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Environment Variables
+.env
+
+# Logs
+*.log

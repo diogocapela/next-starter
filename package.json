@@ -1,0 +1,40 @@
+{
+  "name": "next-starter",
+  "version": "0.0.1",
+  "description": "SSR React web-application starter built with Next.js.",
+  "scripts": {
+    "dev": "next",
+    "start": "NODE_ENV=production next start -p $PORT",
+    "build": "next build",
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "@emotion/core": "10.0.17",
+    "@emotion/styled": "10.0.17",
+    "axios": "0.19.0",
+    "dotenv": "8.1.0",
+    "dotenv-webpack": "1.7.0",
+    "js-cookie": "2.2.1",
+    "lodash": "4.17.15",
+    "mdi-react": "6.1.0",
+    "next": "9.0.6",
+    "prop-types": "15.7.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-redux": "7.1.1",
+    "redux": "4.0.4",
+    "redux-devtools-extension": "2.13.8",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-emotion": "10.0.19",
+    "eslint": "6.4.0",
+    "eslint-config-prettier": "6.3.0",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-hooks": "2.0.1",
+    "husky": "3.0.5",
+    "prettier": "1.18.2",
+    "pretty-quick": "1.11.1"
+  }
+}
