@@ -1,4 +1,20 @@
 {
   "presets": ["next/babel"],
-  "plugins": ["emotion"]
+  "plugins": [
+    "emotion",
+    [
+      "babel-plugin-module-resolver",
+      {
+        "alias": {
+          "#components": "./components",
+          "#config": "./config",
+          "#pages": "./pages",
+          "#redux": "./redux",
+          "#static": "./static",
+          "#theme": "./theme",
+          "#utils": "./utils"
+        }
+      }
+    ]
+  ]
 }

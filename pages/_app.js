@@ -10,18 +10,18 @@ import {
   WEBSITE_DESCRIPTION,
   WEBSITE_URL,
   WEBSITE_THUMBNAIL,
-} from '../config/settings';
+} from '#config/settings';
 
 // Redux Store
-import withStore from '../redux/withStore';
+import withStore from '#redux/withStore';
 
 // Global Styles
-import globalStyles from '../theme/styles';
+import globalStyles from '#theme/styles';
 
 // Components
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
-import CookieBanner from '../components/cookie-banner';
+import Navbar from '#components/navbar';
+import Footer from '#components/footer';
+import CookieBanner from '#components/cookie-banner';
 
 const MainWrapper = styled.main`
   min-height: 65vh;

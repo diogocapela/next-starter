@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
-import { useNews } from '../../redux/redux-news';
+import { useNews } from '#redux/redux-news';
 
-import PageSEO from '../../components/page-seo';
-import Container from '../../components/container';
-import Loading from '../../components/loading';
+import PageSEO from '#components/page-seo';
+import Container from '#components/container';
+import Loading from '#components/loading';
 
-import theme from '../../theme';
+import theme from '#theme';
 
 const H1 = styled.h1`
   color: ${theme.colors.black};

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { WEBSITE_NAME, LEGAL_LINKS } from '../../config/settings';
+import { WEBSITE_NAME, LEGAL_LINKS } from '#config/settings';
 
-import Container from '../container';
-import Link from '../link';
+import Container from '#components/container';
+import Link from '#components/link';
 
 const WrapperFooter = styled.footer`
   padding: 7rem 0;

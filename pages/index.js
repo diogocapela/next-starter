@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import PageSEO from '../components/page-seo';
-import Container from '../components/container';
-import Button from '../components/button';
-import Link from '../components/link';
-import Input from '../components/input';
-import Loading from '../components/loading';
-import Select from '../components/select';
-import Textarea from '../components/textarea';
+import PageSEO from '#components/page-seo';
+import Container from '#components/container';
+import Button from '#components/button';
+import Link from '#components/link';
+import Input from '#components/input';
+import Loading from '#components/loading';
+import Select from '#components/select';
+import Textarea from '#components/textarea';
 
-import theme from '../theme';
+import theme from '#theme';
 
 const H1 = styled.h1`
   color: ${theme.colors.black};

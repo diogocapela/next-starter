@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
-import theme from '../../theme';
+import theme from '#theme';
 
 const WrapperDiv = styled.div`
   width: 100%;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-import { WEBSITE_NAME, WEBSITE_DESCRIPTION, WEBSITE_THUMBNAIL } from '../../config/settings';
+import { WEBSITE_NAME, WEBSITE_DESCRIPTION, WEBSITE_THUMBNAIL } from '#config/settings';
 
 function SEO(props) {
   const { title, description = WEBSITE_DESCRIPTION, thumbnail = WEBSITE_THUMBNAIL } = props;

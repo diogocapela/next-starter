@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { NAVBAR_LINKS } from '../../config/settings';
+import { NAVBAR_LINKS } from '#config/settings';
 
-import Container from '../container';
-import Link from '../link';
+import Container from '#components/container';
+import Link from '#components/link';
 
-import theme from '../../theme';
+import theme from '#theme';
 
 const WrapperNav = styled.nav`
   background: ${theme.colors.lightGrey1};

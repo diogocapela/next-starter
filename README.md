@@ -36,7 +36,7 @@ $ open https://newsapi.org
 $ npm run dev
 
 # Start the production server
-$ npm run start
+$ PORT=3000 npm run start
 
 # Build for production
 $ npm run build

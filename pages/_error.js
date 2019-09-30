@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
-import PageSEO from '../components/page-seo';
-import Container from '../components/container';
+import PageSEO from '#components/page-seo';
+import Container from '#components/container';
 
-import theme from '../theme';
+import theme from '#theme';
 
 const H1 = styled.h1`
   color: ${theme.colors.black};
