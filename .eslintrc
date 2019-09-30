@@ -6,9 +6,18 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
-    "ecmaVersion": 2018
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+        "jsx": true
+    }
   },
   "settings": {
     "react": {
