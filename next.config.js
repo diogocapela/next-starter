@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const path = require('path');
 const dotenv = require('dotenv');
 const dotenvWebpack = require('dotenv-webpack');
@@ -6,12 +5,6 @@ const dotenvWebpack = require('dotenv-webpack');
 dotenv.config();
 
 module.exports = {
-  exportPathMap: function() {
-    return {
-      '/': { page: '/' },
-    };
-  },
-
   // Define build directory
   distDir: 'build',
 
