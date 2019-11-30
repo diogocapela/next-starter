@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 const Input = styled.input`
+  display: inline-block;
   width: auto;
 
   &:hover {

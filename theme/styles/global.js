@@ -9,12 +9,11 @@ export default css`
   }
 
   html {
-    background: ${theme.colors.paleWhite};
+    background: ${theme.colors.lightGrey1};
   }
 
   body {
     font-family: ${theme.fonts.sans};
-    background: ${theme.colors.paleWhite};
   }
 
   b,

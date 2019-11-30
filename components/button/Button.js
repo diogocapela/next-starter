@@ -4,14 +4,14 @@ import styled from '@emotion/styled';
 import theme from '#theme';
 
 const ButtonElement = styled.button`
+  color: ${theme.colors.white};
+  background: ${theme.colors.black};
   align-items: center;
   justify-content: center;
   display: inline-flex;
   padding: 0 1rem;
-  color: ${theme.colors.white};
-  background: ${theme.colors.black};
   min-width: 10rem;
-  height: 5rem;
+  min-height: 3rem;
   border: 0.1rem solid black;
   border-radius: 0.4rem;
   letter-spacing: 0.05rem;

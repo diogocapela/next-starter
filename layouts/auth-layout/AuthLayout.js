@@ -6,7 +6,6 @@ import Link from '#components/link';
 import theme from '#theme';
 
 const WrapperDiv = styled.div`
-  background: ${theme.colors.lightGrey1};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,17 +16,16 @@ const StyledContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 480px;
+  width: 520px;
   max-width: 100%;
 `;
 
-const LettersImg = styled.img`
-  width: 100%;
-  max-width: 12rem;
+const Img = styled.img`
+  width: 2rem;
   margin-bottom: 1.25rem;
 
   ${theme.medias.gteMedium} {
-    max-width: 18rem;
+    width: 3rem;
   }
 `;
 
@@ -38,7 +36,7 @@ const AuthLayout = props => {
     <WrapperDiv>
       <StyledContainer>
         <Link href="/">
-          <LettersImg src="/static/img/favicon.ico" alt="Next Starter" />
+          <Img src="/static/img/favicon.ico" alt="Next Starter" />
         </Link>
         {children}
       </StyledContainer>

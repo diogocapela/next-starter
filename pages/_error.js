@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Layout from '#layouts/main-layout';
+import Layout from '#layouts/auth-layout';
 import PageSEO from '#components/page-seo';
 import theme from '#theme';
 
 const H1 = styled.h1`
   color: ${theme.colors.black};
-  margin-bottom: 2rem;
+  text-align: center;
+`;
+
+const P = styled.p`
+  color: ${theme.colors.black};
+  text-align: center;
+  font-size: 2rem;
 `;
 
 class Error extends Component {
@@ -20,14 +26,11 @@ class Error extends Component {
   render() {
     const { statusCode } = this.props;
 
-    const message = statusCode
-      ? `${statusCode} Whoops, Something Went Wrong`
-      : 'Whoops, Something Went Wrong';
-
     return (
       <Layout>
         <PageSEO title={statusCode ? `Server Error ${statusCode}` : 'Client Error'} />
-        <H1>{message}</H1>
+        <H1>{statusCode}</H1>
+        <P>Whoops, Something Went Wrong!</P>
       </Layout>
     );
   }

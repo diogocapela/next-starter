@@ -8,7 +8,9 @@ import theme from '#theme';
 const WrapperDiv = styled.div``;
 
 const Div = styled.div`
-  background: ${theme.colors.lightGrey1};
+  background: ${theme.colors.white};
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 `;
 
 const MainLayout = props => {

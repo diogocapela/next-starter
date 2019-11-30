@@ -8,6 +8,7 @@ const InputElement = styled.input`
   max-width: 100%;
   border-radius: 0.4rem;
   border: 0.1rem solid ${theme.colors.black};
+  padding: 1rem;
 `;
 
 const Input = props => {

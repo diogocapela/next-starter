@@ -54,6 +54,8 @@ export default css`
   }
 
   button {
+    display: block;
+    max-width: 100%;
     cursor: pointer;
 
     &:disabled {
@@ -62,6 +64,8 @@ export default css`
   }
 
   select {
+    display: block;
+    max-width: 100%;
     cursor: pointer;
 
     &:disabled {
@@ -70,13 +74,18 @@ export default css`
   }
 
   input {
+    display: block;
+    max-width: 100%;
+
     &:disabled {
       cursor: not-allowed;
     }
   }
 
   textarea {
+    display: block;
     resize: none;
+    max-width: 100%;
 
     &:disabled {
       cursor: not-allowed;

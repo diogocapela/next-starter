@@ -4,15 +4,13 @@ import styled from '@emotion/styled';
 import theme from '#theme';
 
 const SelectElement = styled.select`
-  align-items: center;
-  justify-content: center;
-  display: inline-flex;
-  padding: 0 1rem;
   color: ${theme.colors.white};
   background: ${theme.colors.black};
-  width: 15rem;
-  max-width: 100%;
-  height: 5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  min-width: 10rem;
+  height: 3rem;
   border: 0.1rem solid black;
   border-radius: 0.4rem;
   letter-spacing: 0.05rem;
@@ -21,6 +19,7 @@ const SelectElement = styled.select`
   &:hover {
     color: ${theme.colors.black};
     background: ${theme.colors.white};
+    text-decoration: none;
   }
 `;
 

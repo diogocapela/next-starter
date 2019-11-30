@@ -5,7 +5,7 @@ import Container from '#components/container';
 import Link from '#components/link';
 
 const WrapperFooter = styled.footer`
-  padding: 7rem 0;
+  padding: 3.5rem 0;
 `;
 
 const StyledContainer = styled(Container)`
@@ -15,7 +15,7 @@ const StyledContainer = styled(Container)`
 const Ul = styled.ul`
   display: flex;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   margin: 0 auto;
   padding-top: 1rem;
 `;
