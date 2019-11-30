@@ -8,6 +8,8 @@
         "alias": {
           "#components": "./components",
           "#config": "./config",
+          "#hoc": "./hoc",
+          "#layouts": "./layouts",
           "#pages": "./pages",
           "#redux": "./redux",
           "#static": "./static",

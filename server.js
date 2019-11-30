@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const next = require('next');
 const dotenv = require('dotenv');
 
@@ -15,6 +16,8 @@ app.prepare().then(() => {
 
   server.set('port', port);
   server.use(bodyParser.json());
+  server.use(bodyParser.urlencoded({ extended: true }));
+  server.use(cookieParser());
 
   server.get('*', (req, res) => handleRequest(req, res));
 

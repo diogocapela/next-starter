@@ -1,36 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-
 import theme from '#theme';
 
 const WrapperDiv = styled.div`
   width: 100%;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  padding-right: 15px;
+  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 
   ${theme.medias.extraSmall} {
-    max-width: 54rem;
+    max-width: 540px;
   }
 
   ${theme.medias.small} {
-    max-width: 72rem;
+    max-width: 720px;
   }
 
   ${theme.medias.medium} {
-    max-width: 96rem;
+    max-width: 960px;
   }
 
   ${theme.medias.large} {
-    max-width: 114rem;
+    max-width: 1140px;
   }
 `;
 
-function Container(props) {
+const Container = props => {
   return <WrapperDiv {...props} />;
-}
+};
 
 Container.propTypes = {
   children: PropTypes.any,

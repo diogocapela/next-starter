@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-
 import { WEBSITE_NAME, WEBSITE_DESCRIPTION, WEBSITE_THUMBNAIL } from '#config/settings';
 
-function SEO(props) {
+const PageSEO = props => {
   const { title, description = WEBSITE_DESCRIPTION, thumbnail = WEBSITE_THUMBNAIL } = props;
 
   const curatedTitle = title ? `${title} | ${WEBSITE_NAME}` : WEBSITE_NAME;
@@ -30,12 +29,12 @@ function SEO(props) {
       <meta itemProp="image" content={thumbnail} />
     </Head>
   );
-}
+};
 
-SEO.propTypes = {
+PageSEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   thumbnail: PropTypes.string,
 };
 
-export default SEO;
+export default PageSEO;

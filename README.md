@@ -20,7 +20,7 @@ SSR React web-application starter built with Next.js.
 $ git clone https://github.com/diogocapela/next-starter.git && cd next-starter
 
 # Install all the dependencies
-$ npm i
+$ yarn
 
 # Generate a .env file
 $ cp .env.example .env
@@ -33,16 +33,16 @@ $ open https://newsapi.org
 
 ```bash
 # Start the development server
-$ npm run dev
+$ yarn dev
 
 # Start the production server
-$ npm run start
+$ yarn start
 
 # Build for production
-$ npm run build
+$ yarn build
 
 # Clean node_modules
-$ npm run clean
+$ yarn clean
 ```
 
 ## **License**

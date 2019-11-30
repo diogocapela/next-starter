@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 import React, { Component } from 'react';
-
 import { initializeStore } from './configureStore';
 
 const isServer = typeof window === 'undefined';

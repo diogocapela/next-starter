@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
-import { NAVBAR_LINKS } from '#config/settings';
-
+import { WEBSITE_NAME } from '#config/settings';
 import Container from '#components/container';
 import Link from '#components/link';
-
 import theme from '#theme';
 
 const WrapperNav = styled.nav`
   background: ${theme.colors.lightGrey1};
-  margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
 `;
 
 const StyledContainer = styled(Container)`
@@ -20,8 +18,13 @@ const StyledContainer = styled(Container)`
   align-items: center;
 `;
 
+const LogoStyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+`;
+
 const LogoImg = styled.img`
-  height: 3rem;
+  height: 2rem;
 `;
 
 const LogoSpan = styled.span`
@@ -39,11 +42,6 @@ const Li = styled.li`
   }
 `;
 
-const LogoStyledLink = styled(Link)`
-  display: flex;
-  align-items: center;
-`;
-
 const StyledLink = styled(Link)`
   color: ${theme.colors.black};
   text-decoration: none;
@@ -53,25 +51,32 @@ const StyledLink = styled(Link)`
   }
 `;
 
-// eslint-disable-next-line react/prop-types
-const renderLink = ({ url, title }, i) => (
-  <Li key={i}>
-    <StyledLink href={url}>{title}</StyledLink>
-  </Li>
-);
+const NAVBAR_LINKS = [
+  { url: '/about', title: 'About' },
+  { url: '/news', title: 'News' },
+  { url: '/login', title: 'Login' },
+  { url: '/register', title: 'Register' },
+  { url: '/error', title: 'Error' },
+];
 
-function Navbar() {
+const Navbar = () => {
   return (
     <WrapperNav>
       <StyledContainer>
         <LogoStyledLink href="/">
           <LogoImg src="/static/img/favicon.ico" alt="next-starter" />
-          <LogoSpan>Home Page</LogoSpan>
+          <LogoSpan>{WEBSITE_NAME}</LogoSpan>
         </LogoStyledLink>
-        <Ul>{NAVBAR_LINKS.map(renderLink)}</Ul>
+        <Ul>
+          {NAVBAR_LINKS.map(({ url, title }, i) => (
+            <Li key={i}>
+              <StyledLink href={url}>{title}</StyledLink>
+            </Li>
+          ))}
+        </Ul>
       </StyledContainer>
     </WrapperNav>
   );
-}
+};
 
 export default Navbar;

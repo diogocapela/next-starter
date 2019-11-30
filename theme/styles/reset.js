@@ -7,21 +7,12 @@ export default css`
     box-sizing: border-box;
   }
 
-  html {
-    /**
-         * Font size 10px on default browser settings.
-         * It's used as 62.5% to adapt to changes in the browser's default font-size.
-         * Example: 27px -> 2.7rem
-         */
-    font-size: 62.5%;
-  }
-
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
+    overflow-x: hidden;
     margin: 0;
+    padding: 0;
   }
-
-  /* ensure responsive assets */
 
   img {
     max-width: 100%;
@@ -45,8 +36,6 @@ export default css`
     max-width: 100%;
   }
 
-  /* set strong and b elements */
-
   b {
     font-weight: bold;
   }
@@ -55,21 +44,44 @@ export default css`
     font-weight: bold;
   }
 
-  /* fix cursor pointer */
-
   a {
     cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   button {
     cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   select {
     cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
-  /* remove lists default style */
+  input {
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  textarea {
+    resize: none;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
 
   ul {
     list-style-type: none;
@@ -82,8 +94,6 @@ export default css`
     margin: 0;
     padding: 0;
   }
-
-  /* remove margins and paddings from paragraphs and headings */
 
   p {
     margin: 0;
@@ -120,14 +130,10 @@ export default css`
     padding: 0;
   }
 
-  /* normalize tables */
-
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
-
-  /* fix quotes */
 
   blockquote {
     quotes: none;
@@ -136,8 +142,6 @@ export default css`
   q {
     quotes: none;
   }
-
-  /* HTML5 display-role reset for older browsers */
 
   article {
     display: block;

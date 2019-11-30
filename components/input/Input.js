@@ -1,35 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import theme from '#theme';
 
-const Label = styled.label`
-  display: inline-block;
+const InputElement = styled.input`
+  width: 40rem;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  border: 0.1rem solid ${theme.colors.black};
 `;
 
-const Span = styled.span`
-  display: block;
-  margin-bottom: 0.5rem;
-`;
-
-const InputElement = styled.input``;
-
-function Input({ label, placeholder, type = 'text', ...rest }) {
-  if (!label) {
-    return <InputElement {...rest} />;
-  }
+const Input = props => {
+  const {
+    type = 'text',
+    name,
+    placeholder,
+    onChange,
+    onFocus,
+    onBlur,
+    required = false,
+    disabled = false,
+    ...rest
+  } = props;
 
   return (
-    <Label {...rest}>
-      <Span>{label}</Span>
-      <InputElement type={type} placeholder={placeholder} />
-    </Label>
+    <InputElement
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      required={required}
+      disabled={disabled}
+      {...rest}
+    />
   );
-}
+};
 
 Input.propTypes = {
-  label: PropTypes.string,
-  placeholder: PropTypes.string,
   type: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 export default Input;

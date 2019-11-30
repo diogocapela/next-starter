@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
-import { WEBSITE_NAME, LEGAL_LINKS } from '#config/settings';
-
+import { WEBSITE_NAME } from '#config/settings';
 import Container from '#components/container';
 import Link from '#components/link';
 
@@ -16,28 +14,48 @@ const StyledContainer = styled(Container)`
 
 const Ul = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 1.2rem;
-  max-width: 150px;
   margin: 0 auto;
   padding-top: 1rem;
 `;
 
-function Footer() {
+const Li = styled.li`
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid black;
+
+  &:first-of-type {
+    padding-left: 0;
+  }
+
+  &:last-of-type {
+    padding-right: 0;
+    border-right: 0;
+  }
+`;
+
+const FOOTER_LINKS = [
+  { url: '/', title: 'Home' },
+  { url: '/legal/privacy', title: 'Privacy' },
+  { url: '/legal/terms', title: 'Terms' },
+];
+
+const Footer = () => {
   return (
     <WrapperFooter>
       <StyledContainer>
         <Link href="/">{WEBSITE_NAME}</Link> © {new Date().getFullYear()}
         <Ul>
-          {LEGAL_LINKS.map(({ url, title }) => (
-            <li key={title}>
+          {FOOTER_LINKS.map(({ url, title }) => (
+            <Li key={title}>
               <Link href={url}>{title}</Link>
-            </li>
+            </Li>
           ))}
         </Ul>
       </StyledContainer>
     </WrapperFooter>
   );
-}
+};
 
 export default Footer;

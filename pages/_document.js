@@ -1,8 +1,6 @@
 import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
-
 import { WEBSITE_NAME } from '#config/settings';
-import socialLinks from '#config/socialLinks';
 
 class Document extends NextDocument {
   static async getInitialProps(ctx) {
@@ -11,8 +9,6 @@ class Document extends NextDocument {
   }
 
   render() {
-    const TWITTER_USERNAME = socialLinks.twitter.url.split('/')[3];
-
     return (
       <Html lang="en">
         <Head>
@@ -41,8 +37,8 @@ class Document extends NextDocument {
           <meta property="og:site_name" content={WEBSITE_NAME} />
           <meta property="og:type" content="website" />
 
-          <meta name="twitter:site" content={`@${TWITTER_USERNAME}`} />
-          <meta name="twitter:creator" content={`@${TWITTER_USERNAME}`} />
+          <meta name="twitter:site" content="@diogocapela" />
+          <meta name="twitter:creator" content="@diogocapela" />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
         <body>

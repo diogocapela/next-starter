@@ -1,19 +1,23 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
 import NextLink from 'next/link';
+import styled from '@emotion/styled';
 import noop from 'lodash/noop';
 
-function Link({
-  children,
-  as,
-  href,
-  title,
-  onClick = noop,
-  target = '_self',
-  keep = false,
-  ...remainingProps
-}) {
+const A = styled.a``;
+
+const Link = props => {
+  const {
+    children,
+    as,
+    href,
+    title,
+    onClick = noop,
+    target = '_self',
+    keep = false,
+    ...rest
+  } = props;
+
   const isExternal =
     !href || href.startsWith('tel') || href.startsWith('mailto') || href.startsWith('http');
 
@@ -26,26 +30,26 @@ function Link({
   };
 
   return isExternal ? (
-    <a
+    <A
       aria-label={title}
       as={as}
       title={title}
       href={href}
       target={target}
-      rel={target === '_blank' && 'noopener noreferrer'}
+      rel={target === '_blank' ? 'noopener noreferrer' : ''}
       onClick={handleClick}
-      {...remainingProps}
+      {...rest}
     >
       {children}
-    </a>
+    </A>
   ) : (
     <NextLink as={as} href={href}>
-      <a aria-label={title} title={title} onClick={handleClick} {...remainingProps}>
+      <A aria-label={title} title={title} onClick={handleClick} {...rest}>
         {children}
-      </a>
+      </A>
     </NextLink>
   );
-}
+};
 
 Link.propTypes = {
   children: PropTypes.any,

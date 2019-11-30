@@ -6,6 +6,12 @@ const dotenvWebpack = require('dotenv-webpack');
 dotenv.config();
 
 module.exports = {
+  exportPathMap: function() {
+    return {
+      '/': { page: '/' },
+    };
+  },
+
   // Define build directory
   distDir: 'build',
 

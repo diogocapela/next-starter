@@ -1,1 +1,2 @@
 export const USER_ACCEPTS_COOKIES = 'USER_ACCEPTS_COOKIES';
+export const USER_TOKEN = 'USER_TOKEN';

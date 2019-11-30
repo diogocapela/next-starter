@@ -1,17 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-
 import theme from '#theme';
-
-const Label = styled.label`
-  display: inline-block;
-`;
-
-const Span = styled.span`
-  display: block;
-  margin-bottom: 0.5rem;
-`;
 
 const SelectElement = styled.select`
   align-items: center;
@@ -20,7 +10,8 @@ const SelectElement = styled.select`
   padding: 0 1rem;
   color: ${theme.colors.white};
   background: ${theme.colors.black};
-  min-width: 15rem;
+  width: 15rem;
+  max-width: 100%;
   height: 5rem;
   border: 0.1rem solid black;
   border-radius: 0.4rem;
@@ -31,34 +22,27 @@ const SelectElement = styled.select`
     color: ${theme.colors.black};
     background: ${theme.colors.white};
   }
-
-  ${({ theme }) => theme.select};
 `;
 
-const Option = styled.option`
-  ${({ theme }) => theme.option};
-`;
+const Option = styled.option``;
 
-function Select({ label, options = [], ...rest }) {
+const Select = props => {
+  const { options = [], ...rest } = props;
   return (
-    <Label {...rest}>
-      <Span>{label}</Span>
-      <SelectElement>
-        {options.map(({ label, value }, i) => (
-          <Option key={i} value={value}>
-            {label || value}
-          </Option>
-        ))}
-      </SelectElement>
-    </Label>
+    <SelectElement {...rest}>
+      {options.map(({ title, value }, i) => (
+        <Option key={i} value={value}>
+          {title || value}
+        </Option>
+      ))}
+    </SelectElement>
   );
-}
+};
 
 Select.propTypes = {
-  label: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string,
+      title: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
     })
   ),

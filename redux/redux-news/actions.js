@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
 import axios from 'axios';
-
+import { NEWS_API } from '#config/endpoints';
 import * as actionTypes from './actionTypes';
 
 export const loadNews = () => (dispatch, getState) => {
@@ -15,16 +14,12 @@ export const loadNews = () => (dispatch, getState) => {
   });
 
   try {
-    axios
-      .get(
-        `https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=${process.env.NEWS_API_KEY}`
-      )
-      .then(res => {
-        dispatch({
-          type: actionTypes.LOAD_NEWS_SUCCESS,
-          payload: res.data,
-        });
+    axios.get(`${NEWS_API}&q=bitcoin&sortBy=publishedAt`).then(res => {
+      dispatch({
+        type: actionTypes.LOAD_NEWS_SUCCESS,
+        payload: res.data,
       });
+    });
   } catch (error) {
     dispatch({
       type: actionTypes.LOAD_NEWS_ERROR,

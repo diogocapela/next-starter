@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Cookies from 'js-cookie';
-
 import { USER_ACCEPTS_COOKIES } from '#config/cookieTypes';
-
 import Button from '#components/button';
-
 import theme from '#theme';
 
 const WrapperDiv = styled.div`
@@ -36,7 +33,7 @@ const CloseButton = styled(Button)`
   font-size: 1.4rem;
 `;
 
-function CookieBanner() {
+const CookieBanner = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
@@ -45,7 +42,6 @@ function CookieBanner() {
   };
 
   useEffect(() => {
-    // eslint-disable-next-line no-undef
     setTimeout(() => {
       const shouldShow = !Cookies.get(USER_ACCEPTS_COOKIES);
 
@@ -73,6 +69,6 @@ function CookieBanner() {
       </div>
     </WrapperDiv>
   );
-}
+};
 
 export default CookieBanner;

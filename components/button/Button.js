@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-
 import theme from '#theme';
 
 const ButtonElement = styled.button`
@@ -11,7 +10,7 @@ const ButtonElement = styled.button`
   padding: 0 1rem;
   color: ${theme.colors.white};
   background: ${theme.colors.black};
-  min-width: 15rem;
+  min-width: 10rem;
   height: 5rem;
   border: 0.1rem solid black;
   border-radius: 0.4rem;
@@ -25,12 +24,15 @@ const ButtonElement = styled.button`
   }
 `;
 
-function Button({ children, ...rest }) {
-  return <ButtonElement {...rest}>{children}</ButtonElement>;
-}
+const Button = props => {
+  const { children, loading = false, ...rest } = props;
+
+  return <ButtonElement {...rest}>{loading ? 'Loading...' : children}</ButtonElement>;
+};
 
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  loading: PropTypes.bool,
 };
 
 export default Button;

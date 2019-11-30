@@ -1,7 +1,6 @@
-import { useContext, useMemo } from 'react';
+import { useContext, useMemo, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { ReactReduxContext, useSelector } from 'react-redux';
-
 import { loadNews } from './actions';
 
 function useNews() {
@@ -10,6 +9,10 @@ function useNews() {
   } = useContext(ReactReduxContext);
 
   const news = useSelector(state => state.news);
+
+  useEffect(() => {
+    loadNews();
+  }, []);
 
   const actions = useMemo(
     () =>

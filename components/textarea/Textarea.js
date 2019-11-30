@@ -1,37 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-
-const Label = styled.label`
-  display: inline-block;
-`;
-
-const Span = styled.span`
-  display: block;
-  margin-bottom: 0.5rem;
-`;
+import theme from '#theme';
 
 const TextareaElement = styled.textarea`
-  ${({ theme }) => theme.textarea};
+  width: 40rem;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  border: 0.1rem solid ${theme.colors.black};
 `;
 
-function Textarea({ label, placeholder, rows = 4, ...rest }) {
-  if (!label) {
-    return <TextareaElement {...rest} />;
-  }
+const Textarea = props => {
+  const {
+    rows = 4,
+    name,
+    placeholder,
+    onChange,
+    onFocus,
+    onBlur,
+    required = false,
+    disabled = false,
+    ...rest
+  } = props;
 
   return (
-    <Label {...rest}>
-      <Span>{label}</Span>
-      <TextareaElement placeholder={placeholder} rows={rows} />
-    </Label>
+    <TextareaElement
+      rows={rows}
+      name={name}
+      placeholder={placeholder}
+      onChange={onChange}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      required={required}
+      disabled={disabled}
+      {...rest}
+    />
   );
-}
+};
 
 Textarea.propTypes = {
-  label: PropTypes.string,
-  placeholder: PropTypes.string,
   rows: PropTypes.number,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 export default Textarea;

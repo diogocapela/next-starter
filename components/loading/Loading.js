@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 
 const WrapperDiv = styled.div``;
 
-function Loading() {
+const Loading = () => {
   return <WrapperDiv>Loading...</WrapperDiv>;
-}
+};
 
 export default Loading;

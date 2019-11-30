@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
+import Layout from '#layouts/main-layout';
 import PageSEO from '#components/page-seo';
 import Container from '#components/container';
-
 import theme from '#theme';
 
 const H1 = styled.h1`
@@ -14,15 +13,17 @@ const P = styled.p`
   color: ${theme.colors.black};
 `;
 
-function Terms() {
+const TermsPage = () => {
   return (
-    <Container>
+    <Layout>
       <PageSEO title="Terms and Conditions" />
-      <H1>Terms and Conditions</H1>
-      <hr />
-      <P>Content goes here...</P>
-    </Container>
+      <Container>
+        <H1>Terms and Conditions</H1>
+        <hr />
+        <P>Content goes here...</P>
+      </Container>
+    </Layout>
   );
-}
+};
 
-export default Terms;
+export default TermsPage;

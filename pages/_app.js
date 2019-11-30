@@ -1,31 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import NextApp from 'next/app';
 import NextHead from 'next/head';
 import { Global } from '@emotion/core';
-import styled from '@emotion/styled';
-
 import {
   WEBSITE_NAME,
   WEBSITE_DESCRIPTION,
   WEBSITE_URL,
   WEBSITE_THUMBNAIL,
 } from '#config/settings';
-
-// Redux Store
 import withStore from '#redux/withStore';
-
-// Global Styles
 import globalStyles from '#theme/styles';
-
-// Components
-import Navbar from '#components/navbar';
-import Footer from '#components/footer';
-import CookieBanner from '#components/cookie-banner';
-
-const MainWrapper = styled.main`
-  min-height: 65vh;
-`;
 
 class App extends NextApp {
   static async getInitialProps({ Component, ctx }) {
@@ -69,14 +54,7 @@ class App extends NextApp {
           <link rel="shortlink" href={`${WEBSITE_URL}${router.route}`} />
         </NextHead>
         <Global styles={globalStyles} />
-        <Fragment>
-          <Navbar />
-          <MainWrapper>
-            <Component {...pageProps} />
-          </MainWrapper>
-          <Footer />
-          <CookieBanner />
-        </Fragment>
+        <Component {...pageProps} />
       </Provider>
     );
   }

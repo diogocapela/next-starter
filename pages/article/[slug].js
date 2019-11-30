@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-
-import { useNews } from '#redux/redux-news';
-
+import Layout from '#layouts/main-layout';
+import { useNews } from '#redux/redux';
 import PageSEO from '#components/page-seo';
 import Container from '#components/container';
 import Loading from '#components/loading';
-
 import theme from '#theme';
 
 const H1 = styled.h1`
@@ -21,31 +19,29 @@ const AuthorSpan = styled.span`
   font-weight: bold;
 `;
 
-function Article() {
+const ArticlePage = () => {
   const router = useRouter();
-  const { news, isLoading, loadNews } = useNews();
+  const { news, isLoading } = useNews();
 
   const article = news[router.query.slug] || {};
 
-  useEffect(() => {
-    loadNews();
-  }, [loadNews]);
-
   return (
-    <Container>
-      <PageSEO title="Article" />
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <div>
-          <H1>{article.title}</H1>
-          <img src={article.urlToImage} />
-          <AuthorSpan>{article.author}</AuthorSpan>
-          <p>{article.content}</p>
-        </div>
-      )}
-    </Container>
+    <Layout>
+      <PageSEO title={article.title} />
+      <Container>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div>
+            <H1>{article.title}</H1>
+            <img src={article.urlToImage} />
+            <AuthorSpan>{article.author}</AuthorSpan>
+            <p>{article.content}</p>
+          </div>
+        )}
+      </Container>
+    </Layout>
   );
-}
+};
 
-export default Article;
+export default ArticlePage;
