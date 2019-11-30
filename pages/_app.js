@@ -24,10 +24,10 @@ class App extends NextApp {
   }
 
   render() {
-    const { Component, pageProps, router, reduxStore } = this.props;
+    const { Component, pageProps, router, store } = this.props;
 
     return (
-      <Provider store={reduxStore}>
+      <Provider store={store}>
         <NextHead>
           <title>{WEBSITE_NAME}</title>
           <meta name="twitter:title" content={WEBSITE_NAME} />

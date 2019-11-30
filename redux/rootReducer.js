@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import auth from './redux-auth';
-import news from './redux-news';
+import posts from './redux-posts';
 
 export default combineReducers({
   auth,
-  news,
+  posts,
 });

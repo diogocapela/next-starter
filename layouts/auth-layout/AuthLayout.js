@@ -36,7 +36,7 @@ const AuthLayout = props => {
     <WrapperDiv>
       <StyledContainer>
         <Link href="/">
-          <Img src="/static/img/favicon.ico" alt="Next Starter" />
+          <Img src="/img/favicon.ico" alt="Next Starter" />
         </Link>
         {children}
       </StyledContainer>

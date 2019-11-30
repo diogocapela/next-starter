@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import Layout from '#layouts/main-layout';
-import useNews from '#hooks/useNews';
+import usePosts from '#hooks/usePosts';
 import PageSEO from '#components/page-seo';
 import Container from '#components/container';
 import Loading from '#components/loading';
@@ -13,30 +13,24 @@ const H1 = styled.h1`
   margin-bottom: 2rem;
 `;
 
-const AuthorSpan = styled.span`
-  display: block;
-  margin: 1rem 0;
-  font-weight: bold;
-`;
+const P = styled.p``;
 
-const ArticlePage = () => {
+const PostPage = () => {
   const router = useRouter();
-  const { news, isLoading } = useNews();
+  const { posts, isLoading } = usePosts();
 
-  const article = news[router.query.slug] || {};
+  const post = posts[router.query.slug] || {};
 
   return (
     <Layout>
-      <PageSEO title={article.title} />
+      <PageSEO title={post.title} />
       <Container>
         {isLoading ? (
           <Loading />
         ) : (
           <div>
-            <H1>{article.title}</H1>
-            <img src={article.urlToImage} />
-            <AuthorSpan>{article.author}</AuthorSpan>
-            <p>{article.content}</p>
+            <H1>{post.title}</H1>
+            <P>{post.body}</P>
           </div>
         )}
       </Container>
@@ -44,4 +38,4 @@ const ArticlePage = () => {
   );
 };
 
-export default ArticlePage;
+export default PostPage;

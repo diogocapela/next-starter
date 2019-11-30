@@ -53,7 +53,7 @@ const StyledLink = styled(Link)`
 
 const NAVBAR_LINKS = [
   { url: '/about', title: 'About' },
-  { url: '/news', title: 'News' },
+  { url: '/posts', title: 'Posts' },
   { url: '/login', title: 'Login' },
   { url: '/register', title: 'Register' },
   { url: '/error', title: 'Error' },
@@ -64,7 +64,7 @@ const Navbar = () => {
     <WrapperNav>
       <StyledContainer>
         <LogoStyledLink href="/">
-          <LogoImg src="/static/img/favicon.ico" alt="next-starter" />
+          <LogoImg src="/img/favicon.ico" alt="Next Starter" />
           <LogoSpan>{WEBSITE_NAME}</LogoSpan>
         </LogoStyledLink>
         <Ul>

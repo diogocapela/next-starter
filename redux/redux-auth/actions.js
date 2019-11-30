@@ -1,4 +1,4 @@
-import axios from 'axios';
+import fetch from 'isomorphic-fetch';
 import Cookies from 'js-cookie';
 import { AUTH_API } from '#config/endpoints';
 import * as cookieTypes from '#config/cookieTypes';
@@ -10,10 +10,9 @@ export const register = data => async dispatch => {
   });
 
   try {
-    const res = await axios({
-      method: 'post',
-      url: `${AUTH_API}/auth/register`,
-      data,
+    const res = await fetch(`${AUTH_API}/auth/register`, {
+      method: 'POST',
+      body: data,
     });
 
     Cookies.set(cookieTypes.USER_TOKEN, res.data.data.token, { expires: 90 });
@@ -36,10 +35,9 @@ export const login = data => async dispatch => {
   });
 
   try {
-    const res = await axios({
-      method: 'post',
-      url: `${AUTH_API}/auth/login`,
-      data,
+    const res = await fetch(`${AUTH_API}/auth/login`, {
+      method: 'POST',
+      body: data,
     });
 
     Cookies.set(cookieTypes.USER_TOKEN, res.data.data.token, { expires: 90 });
@@ -81,10 +79,9 @@ export const getUser = token => async dispatch => {
   });
 
   try {
-    const res = await axios({
-      method: 'post',
-      url: `${AUTH_API}/auth/me`,
-      data: { token },
+    const res = await fetch(`${AUTH_API}/auth/me`, {
+      method: 'POST',
+      body: { token },
     });
 
     Cookies.get(cookieTypes.USER_TOKEN);

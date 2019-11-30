@@ -12,8 +12,8 @@
           "#hooks": "./hooks",
           "#layouts": "./layouts",
           "#pages": "./pages",
+          "#public": "./public",
           "#redux": "./redux",
-          "#static": "./static",
           "#theme": "./theme",
           "#utils": "./utils"
         }

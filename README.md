@@ -24,9 +24,6 @@ $ yarn
 
 # Generate a .env file
 $ cp .env.example .env
-
-# Get an API key
-$ open https://newsapi.org
 ```
 
 ## **Scripts**

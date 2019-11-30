@@ -20,10 +20,10 @@ class Document extends NextDocument {
 
           <meta name="theme-color" content="#000000" />
 
-          <link rel="shortcut icon" href="/static/img/favicon.ico" />
-          <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico" />
+          <link rel="shortcut icon" href="/img/favicon.ico" />
+          <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 
-          <link rel="manifest" href="/static/manifest.json" />
+          <link rel="manifest" href="/manifest.json" />
 
           <meta name="robots" content="index, follow" />
 
