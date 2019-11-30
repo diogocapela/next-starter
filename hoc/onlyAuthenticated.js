@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { useAuth } from '#redux';
+import useAuth from '#hooks/useAuth';
 
 const onlyAuthenticated = WrappedComponent => {
   const OnlyAuthenticatedHOC = props => {

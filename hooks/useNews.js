@@ -1,9 +1,9 @@
 import { useContext, useMemo, useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { ReactReduxContext, useSelector } from 'react-redux';
-import { loadNews } from './actions';
+import { loadNews } from '#redux/redux-news/actions';
 
-function useNews() {
+const useNews = () => {
   const {
     store: { dispatch },
   } = useContext(ReactReduxContext);
@@ -31,6 +31,6 @@ function useNews() {
     isLoading: news.isLoading,
     error: news.error,
   };
-}
+};
 
 export default useNews;

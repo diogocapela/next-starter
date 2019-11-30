@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import { useAuth } from '#redux/redux-auth';
+import useAuth from '#hooks/useAuth';
 import validationUtils from '#utils/validation';
 import Input from '#components/input';
 import Checkbox from '#components/checkbox';

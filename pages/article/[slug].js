@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import Layout from '#layouts/main-layout';
-import { useNews } from '#redux';
+import useNews from '#hooks/useNews';
 import PageSEO from '#components/page-seo';
 import Container from '#components/container';
 import Loading from '#components/loading';

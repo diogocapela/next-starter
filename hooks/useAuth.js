@@ -1,10 +1,9 @@
 import { useContext, useMemo } from 'react';
 import { bindActionCreators } from 'redux';
 import { ReactReduxContext, useSelector } from 'react-redux';
+import { register, login, logout, getUser } from '#redux/redux-auth/actions';
 
-import { register, login, logout, getUser } from './actions';
-
-function useAuth() {
+const useAuth = () => {
   const {
     store: { dispatch },
   } = useContext(ReactReduxContext);
@@ -33,6 +32,6 @@ function useAuth() {
     isLoading: state.profile.isLoading,
     error: state.profile.error,
   };
-}
+};
 
 export default useAuth;
