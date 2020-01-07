@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'isomorphic-unfetch';
 import Cookies from 'js-cookie';
 import { AUTH_API } from '#config/endpoints';
 import * as cookieTypes from '#config/cookieTypes';

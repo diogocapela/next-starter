@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'isomorphic-unfetch';
 import { POSTS_API } from '#config/endpoints';
 import * as actionTypes from './actionTypes';
 
