@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { WEBSITE_NAME } from '#config/settings';
-import Container from '#components/container';
-import Link from '#components/link';
-import theme from '#theme';
+
+import { WEBSITE_NAME } from '@ns/config/settings';
+import Container from '@ns/components/container';
+import Link from '@ns/components/link';
+import theme from '@ns/theme';
 
 const WrapperNav = styled.nav`
   background: ${theme.colors.lightGrey1};
@@ -54,9 +55,7 @@ const StyledLink = styled(Link)`
 const NAVBAR_LINKS = [
   { url: '/about', title: 'About' },
   { url: '/posts', title: 'Posts' },
-  { url: '/login', title: 'Login' },
-  { url: '/register', title: 'Register' },
-  { url: '/error', title: 'Error' },
+  { url: '/404', title: '404' },
 ];
 
 const Navbar = () => {

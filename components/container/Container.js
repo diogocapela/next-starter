@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import theme from '#theme';
+
+import theme from '@ns/theme';
 
 const WrapperDiv = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ const WrapperDiv = styled.div`
   }
 `;
 
-const Container = props => {
+const Container = (props) => {
   return <WrapperDiv {...props} />;
 };
 

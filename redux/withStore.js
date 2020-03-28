@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
 import React, { Component } from 'react';
-import { initializeStore } from './configureStore';
+
+import { initializeStore } from '@ns/redux/configureStore';
 
 const isServer = typeof window === 'undefined';
 const __NEXT_REDUX_STORE__ = '__NEXT_REDUX_STORE__';
@@ -18,7 +18,7 @@ function getOrCreateStore(initialState) {
   return window[__NEXT_REDUX_STORE__];
 }
 
-export default App => {
+export default (App) => {
   return class AppWithRedux extends Component {
     static async getInitialProps(appContext) {
       // Get or Create the store with `undefined` as initialState

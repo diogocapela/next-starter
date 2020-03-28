@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Layout from '#layouts/main-layout';
-import PageSEO from '#components/page-seo';
-import Container from '#components/container';
 
-import theme from '#theme';
+import Layout from '@ns/layouts/main-layout';
+import PageSEO from '@ns/components/page-seo';
+import Container from '@ns/components/container';
+
+import theme from '@ns/theme';
 
 const H1 = styled.h1`
   color: ${theme.colors.black};

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Navbar from '#components/navbar';
-import Footer from '#components/footer';
-import theme from '#theme';
+
+import Navbar from '@ns/components/navbar';
+import Footer from '@ns/components/footer';
+import theme from '@ns/theme';
 
 const WrapperDiv = styled.div``;
 
@@ -13,7 +14,7 @@ const Div = styled.div`
   padding-bottom: 3rem;
 `;
 
-const MainLayout = props => {
+const MainLayout = (props) => {
   const { children } = props;
 
   return (

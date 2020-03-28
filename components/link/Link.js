@@ -2,21 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
-import noop from 'lodash/noop';
 
-const A = styled.a``;
+const A = styled.a`
+  display: inline-block;
+`;
 
-const Link = props => {
-  const {
-    children,
-    as,
-    href,
-    title,
-    onClick = noop,
-    target = '_self',
-    keep = false,
-    ...rest
-  } = props;
+const Link = (props) => {
+  const { children, as, href, title, onClick, target, keep, ...rest } = props;
 
   const isExternal =
     !href || href.startsWith('tel') || href.startsWith('mailto') || href.startsWith('http');
@@ -59,6 +51,12 @@ Link.propTypes = {
   onClick: PropTypes.func,
   target: PropTypes.string,
   keep: PropTypes.bool,
+};
+
+Link.defaultProps = {
+  onClick: () => undefined,
+  target: '_self',
+  keep: false,
 };
 
 export default Link;

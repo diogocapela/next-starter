@@ -23,8 +23,5 @@ coverage/
 .vs/
 .vscode/
 
-# Environment Variables
-.env
-
 # Logs
 *.log

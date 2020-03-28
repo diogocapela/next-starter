@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import theme from '#theme';
+
+import theme from '@ns/theme';
 
 const TextareaElement = styled.textarea`
   width: 40rem;
@@ -11,18 +12,8 @@ const TextareaElement = styled.textarea`
   padding: 1rem;
 `;
 
-const Textarea = props => {
-  const {
-    rows = 4,
-    name,
-    placeholder,
-    onChange,
-    onFocus,
-    onBlur,
-    required = false,
-    disabled = false,
-    ...rest
-  } = props;
+const Textarea = (props) => {
+  const { rows, name, placeholder, onChange, onFocus, onBlur, required, disabled, ...rest } = props;
 
   return (
     <TextareaElement
@@ -48,6 +39,15 @@ Textarea.propTypes = {
   onBlur: PropTypes.func,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
+};
+
+Textarea.defaultProps = {
+  rows: 4,
+  onChange: () => undefined,
+  onFocus: () => undefined,
+  onBlur: () => undefined,
+  required: false,
+  disabled: false,
 };
 
 export default Textarea;

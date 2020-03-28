@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import theme from '#theme';
+
+import theme from '@ns/theme';
 
 const InputElement = styled.input`
   width: 40rem;
@@ -11,18 +12,8 @@ const InputElement = styled.input`
   padding: 1rem;
 `;
 
-const Input = props => {
-  const {
-    type = 'text',
-    name,
-    placeholder,
-    onChange,
-    onFocus,
-    onBlur,
-    required = false,
-    disabled = false,
-    ...rest
-  } = props;
+const Input = (props) => {
+  const { type, name, placeholder, onChange, onFocus, onBlur, required, disabled, ...rest } = props;
 
   return (
     <InputElement
@@ -48,6 +39,15 @@ Input.propTypes = {
   onBlur: PropTypes.func,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
+};
+
+Input.defaultProps = {
+  type: 'text',
+  onChange: () => undefined,
+  onFocus: () => undefined,
+  onBlur: () => undefined,
+  required: false,
+  disabled: false,
 };
 
 export default Input;

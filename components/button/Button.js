@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import theme from '#theme';
+
+import theme from '@ns/theme';
 
 const ButtonElement = styled.button`
   color: ${theme.colors.white};
@@ -24,8 +25,8 @@ const ButtonElement = styled.button`
   }
 `;
 
-const Button = props => {
-  const { children, loading = false, ...rest } = props;
+const Button = (props) => {
+  const { children, loading, ...rest } = props;
 
   return <ButtonElement {...rest}>{loading ? 'Loading...' : children}</ButtonElement>;
 };
@@ -33,6 +34,10 @@ const Button = props => {
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   loading: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  loading: false,
 };
 
 export default Button;

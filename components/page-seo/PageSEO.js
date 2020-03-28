@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { WEBSITE_NAME, WEBSITE_DESCRIPTION, WEBSITE_THUMBNAIL } from '#config/settings';
 
-const PageSEO = props => {
-  const { title, description = WEBSITE_DESCRIPTION, thumbnail = WEBSITE_THUMBNAIL } = props;
+import { WEBSITE_NAME, WEBSITE_DESCRIPTION, WEBSITE_THUMBNAIL } from '@ns/config/settings';
+
+const PageSEO = (props) => {
+  const { title, description, thumbnail } = props;
 
   const curatedTitle = title ? `${title} | ${WEBSITE_NAME}` : WEBSITE_NAME;
 
@@ -35,6 +36,11 @@ PageSEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   thumbnail: PropTypes.string,
+};
+
+PageSEO.defaultProps = {
+  description: WEBSITE_DESCRIPTION,
+  thumbnail: WEBSITE_THUMBNAIL,
 };
 
 export default PageSEO;

@@ -11,13 +11,19 @@ const Input = styled.input`
   }
 `;
 
-const Checkbox = props => {
-  const { checked, ...rest } = props;
-  return <Input type="checkbox" checked={checked} {...rest} />;
+const Checkbox = (props) => {
+  const { checked, onChange, ...rest } = props;
+  return <Input type="checkbox" checked={checked} onChange={onChange} {...rest} />;
 };
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,
+  onChange: PropTypes.func,
+};
+
+Checkbox.defaultProps = {
+  checked: false,
+  onChange: () => undefined,
 };
 
 export default Checkbox;

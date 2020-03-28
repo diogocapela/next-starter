@@ -6,16 +6,16 @@
       "babel-plugin-module-resolver",
       {
         "alias": {
-          "#components": "./components",
-          "#config": "./config",
-          "#hoc": "./hoc",
-          "#hooks": "./hooks",
-          "#layouts": "./layouts",
-          "#pages": "./pages",
-          "#public": "./public",
-          "#redux": "./redux",
-          "#theme": "./theme",
-          "#utils": "./utils"
+          "@ns/components": "./components",
+          "@ns/config": "./config",
+          "@ns/hoc": "./hoc",
+          "@ns/hooks": "./hooks",
+          "@ns/layouts": "./layouts",
+          "@ns/pages": "./pages",
+          "@ns/public": "./public",
+          "@ns/redux": "./redux",
+          "@ns/theme": "./theme",
+          "@ns/utils": "./utils"
         }
       }
     ]

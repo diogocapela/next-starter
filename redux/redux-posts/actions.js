@@ -1,10 +1,11 @@
 import fetch from 'isomorphic-unfetch';
-import { POSTS_API } from '#config/endpoints';
+
+import { POSTS_API } from '@ns/config/endpoints';
 import * as actionTypes from './actionTypes';
 
-export const loadPosts = () => async dispatch => {
+export const fetchPosts = () => async (dispatch) => {
   dispatch({
-    type: actionTypes.LOAD_POSTS_START,
+    type: actionTypes.FETCH_POSTS_START,
   });
 
   try {
@@ -14,12 +15,12 @@ export const loadPosts = () => async dispatch => {
     const data = await res.json();
 
     dispatch({
-      type: actionTypes.LOAD_POSTS_SUCCESS,
+      type: actionTypes.FETCH_POSTS_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: actionTypes.LOAD_POSTS_ERROR,
+      type: actionTypes.FETCH_POSTS_ERROR,
       payload: error,
     });
   }

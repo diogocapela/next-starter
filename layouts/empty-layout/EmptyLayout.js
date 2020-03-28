@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Container from '#components/container';
-import Link from '#components/link';
-import theme from '#theme';
+
+import { WEBSITE_NAME } from '@ns/config/settings';
+import Container from '@ns/components/container';
+import Link from '@ns/components/link';
+import theme from '@ns/theme';
 
 const WrapperDiv = styled.div`
   display: flex;
@@ -21,22 +23,22 @@ const StyledContainer = styled(Container)`
 `;
 
 const Img = styled.img`
-  width: 2rem;
+  width: 3rem;
   margin-bottom: 1.25rem;
 
   ${theme.medias.gteMedium} {
-    width: 3rem;
+    width: 3.5rem;
   }
 `;
 
-const AuthLayout = props => {
+const EmptyLayout = (props) => {
   const { children } = props;
 
   return (
     <WrapperDiv>
       <StyledContainer>
         <Link href="/">
-          <Img src="/img/favicon.ico" alt="Next Starter" />
+          <Img src="/img/favicon.ico" alt={WEBSITE_NAME} />
         </Link>
         {children}
       </StyledContainer>
@@ -44,8 +46,8 @@ const AuthLayout = props => {
   );
 };
 
-AuthLayout.propTypes = {
+EmptyLayout.propTypes = {
   children: PropTypes.any,
 };
 
-export default AuthLayout;
+export default EmptyLayout;

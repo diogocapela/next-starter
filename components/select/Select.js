@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import theme from '#theme';
+
+import theme from '@ns/theme';
 
 const SelectElement = styled.select`
   color: ${theme.colors.white};
@@ -25,10 +26,10 @@ const SelectElement = styled.select`
 
 const Option = styled.option``;
 
-const Select = props => {
-  const { options = [], ...rest } = props;
+const Select = (props) => {
+  const { options, onChange, selected, ...rest } = props;
   return (
-    <SelectElement {...rest}>
+    <SelectElement onChange={onChange} value={selected} {...rest}>
       {options.map(({ title, value }, i) => (
         <Option key={i} value={value}>
           {title || value}
@@ -45,6 +46,13 @@ Select.propTypes = {
       value: PropTypes.string.isRequired,
     })
   ),
+  onChange: PropTypes.func,
+  selected: PropTypes.any,
+};
+
+Select.defaultProps = {
+  options: [],
+  onChange: () => undefined,
 };
 
 export default Select;

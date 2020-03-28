@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Cookies from 'js-cookie';
-import { USER_ACCEPTS_COOKIES } from '#config/cookieTypes';
-import Button from '#components/button';
-import theme from '#theme';
+
+import { USER_ACCEPTS_COOKIES } from '@ns/config/cookieTypes';
+import Button from '@ns/components/button';
+import theme from '@ns/theme';
 
 const WrapperDiv = styled.div`
   color: ${theme.colors.black};

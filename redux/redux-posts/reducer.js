@@ -6,20 +6,20 @@ const initialState = {
   error: undefined,
 };
 
-const posts = (state = initialState, action = {}) => {
+export default (state = initialState, action = {}) => {
   switch (action.type) {
-    case actionTypes.LOAD_POSTS_START:
+    case actionTypes.FETCH_POSTS_START:
       return {
         ...state,
         isLoading: true,
       };
-    case actionTypes.LOAD_POSTS_SUCCESS:
+    case actionTypes.FETCH_POSTS_SUCCESS:
       return {
         ...state,
         result: action.payload,
         isLoading: false,
       };
-    case actionTypes.LOAD_POSTS_ERROR:
+    case actionTypes.FETCH_POSTS_ERROR:
       return {
         ...state,
         isLoading: false,
@@ -29,5 +29,3 @@ const posts = (state = initialState, action = {}) => {
       return state;
   }
 };
-
-export default posts;

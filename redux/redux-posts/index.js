@@ -1,4 +1,7 @@
 import * as actions from './actions';
+import * as actionTypes from './actionTypes';
 
-export { default } from './reducer';
-export { actions };
+import { default as reducer } from './reducer';
+import { default as usePosts } from './usePosts';
+
+export { actions, actionTypes, reducer, usePosts };

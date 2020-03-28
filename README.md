@@ -1,4 +1,4 @@
-# **next-starter**
+# next-starter
 
 [![Dependencies Status][dependencies-status-img]][dependencies-status-url] [![Dev Dependencies Status][dev-dependencies-status-img]][dev-dependencies-status-url] [![Code Style][code-style-img]][code-style-url]
 
@@ -9,39 +9,49 @@
 [code-style-url]: https://github.com/prettier/prettier
 [code-style-img]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square
 
-SSR React web-application starter built with Next.js.
+React web application starter built with Next.js.
 
-**Live Demo:** [https://next-starter.diog.co](https://next-starter.diog.co)
+**Demo:** [https://next-starter.diog.co](https://next-starter.diog.co)
 
-## **Setup**
+## Required Software
+
+- [Node.js](https://nodejs.org)
+
+## Recommended Software
+
+- [VS Code](https://code.visualstudio.com)
+- [ESLint Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier Extension for VS Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Node Version Manager](https://github.com/nvm-sh/nvm)
+- [React Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+- [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
+## Setup
 
 ```bash
 # Get the latest snapshot
 $ git clone https://github.com/diogocapela/next-starter.git && cd next-starter
 
-# Install all the dependencies
-$ yarn
+# Change to the correct version of Node.js
+$ nvm use
 
-# Generate a .env file
-$ cp .env.example .env
+# Install all the dependencies
+$ npm install
 ```
 
-## **Scripts**
+## Scripts
 
 ```bash
 # Start the development server
-$ yarn dev
+$ npm run dev
 
 # Start the production server
-$ yarn start
+$ npm run start
 
 # Build for production
-$ yarn build
-
-# Clean node_modules
-$ yarn clean
+$ npm run build
 ```
 
-## **License**
+## License
 
 Open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

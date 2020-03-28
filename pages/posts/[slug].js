@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
-import Layout from '#layouts/main-layout';
-import usePosts from '#hooks/usePosts';
-import PageSEO from '#components/page-seo';
-import Container from '#components/container';
-import Loading from '#components/loading';
-import theme from '#theme';
+
+import { usePosts, actions } from '@ns/redux/redux-posts';
+import Layout from '@ns/layouts/main-layout';
+import PageSEO from '@ns/components/page-seo';
+import Container from '@ns/components/container';
+import Loading from '@ns/components/loading';
+import theme from '@ns/theme';
 
 const H1 = styled.h1`
   color: ${theme.colors.black};
   margin-bottom: 2rem;
 `;
 
-const P = styled.p``;
-
 const PostPage = () => {
   const router = useRouter();
   const { posts, isLoading } = usePosts();
 
-  const post = posts[router.query.slug] || {};
+  const { slug } = router.query;
+
+  useEffect(() => {
+    if (!posts[slug]) {
+      router.push('/');
+    }
+  }, [posts, slug, router]);
+
+  const post = posts[slug] || {};
 
   return (
     <Layout>
@@ -30,12 +37,22 @@ const PostPage = () => {
         ) : (
           <div>
             <H1>{post.title}</H1>
-            <P>{post.body}</P>
+            <p>{post.body}</p>
           </div>
         )}
       </Container>
     </Layout>
   );
+};
+
+PostPage.getInitialProps = async ({ store }) => {
+  const state = store.getState();
+
+  if (typeof state.posts.result === 'undefined') {
+    await store.dispatch(actions.fetchPosts());
+  }
+
+  return {};
 };
 
 export default PostPage;
