@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import theme from '../';
 
 export default css`
-  ::selection {
+  &::selection {
     color: ${theme.colors.white};
     background: ${theme.colors.black};
   }

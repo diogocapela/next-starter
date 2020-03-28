@@ -11,6 +11,13 @@ import {
   WEBSITE_ICON,
   WEBSITE_THUMBNAIL,
   WEBSITE_LANGUAGE,
+  WEBSITE_COUNTRY,
+  WEBSITE_CITY,
+  WEBSITE_EMAIL,
+  WEBSITE_PHONE,
+  WEBSITE_KEYWORDS,
+  WEBSITE_TWITTER,
+  WEBSITE_BROWSER_THEME_COLOR,
 } from '@ns/config/settings';
 import withStore from '@ns/redux/withStore';
 import globalStyles from '@ns/theme/styles';
@@ -43,15 +50,26 @@ class App extends NextApp {
           <link rel="shortcut icon" href={WEBSITE_ICON} />
           <link rel="icon" type="image/x-icon" href={WEBSITE_ICON} />
 
-          {/* Theme */}
-          <meta name="theme-color" content="#000000" />
+          {/* Browser Theme */}
+          <meta name="theme-color" content={WEBSITE_BROWSER_THEME_COLOR} />
 
           {/* SEO */}
           <meta name="robots" content="index, follow" />
-          <meta name="keywords" content="next, starter, react, redux" />
+          <meta name="keywords" content={WEBSITE_KEYWORDS} />
 
           {/* Language */}
           <meta name="language" content={WEBSITE_LANGUAGE} />
+
+          {/* Location */}
+          <meta name="og:country-name" content={WEBSITE_COUNTRY} />
+          <meta name="og:locality" content={WEBSITE_CITY} />
+
+          {/* Email */}
+          <meta name="reply-to" content={WEBSITE_EMAIL} />
+          <meta name="og:email" content={WEBSITE_EMAIL} />
+
+          {/* Phone */}
+          <meta name="og:phone_number" content={WEBSITE_PHONE} />
 
           {/* Name */}
           <meta name="author" content={WEBSITE_NAME} />
@@ -59,6 +77,10 @@ class App extends NextApp {
           <meta name="designer" content={WEBSITE_NAME} />
           <meta name="owner" content={WEBSITE_NAME} />
           <meta property="og:site_name" content={WEBSITE_NAME} />
+
+          {/* Twitter */}
+          <meta name="twitter:site" content={WEBSITE_TWITTER} />
+          <meta name="twitter:creator" content={WEBSITE_TWITTER} />
 
           {/* Page Title */}
           <title>{WEBSITE_NAME}</title>
@@ -88,8 +110,6 @@ class App extends NextApp {
           <link rel="shortlink" href={`${WEBSITE_URL}${router.route}`} />
 
           {/* Miscellaneous */}
-          <meta name="twitter:site" content="@diogocapela" />
-          <meta name="twitter:creator" content="@diogocapela" />
           <meta property="og:type" content="website" />
           <meta name="twitter:card" content="summary_large_image" />
         </NextHead>

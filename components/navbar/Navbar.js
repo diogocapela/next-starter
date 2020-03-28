@@ -38,7 +38,7 @@ const Ul = styled.ul`
 `;
 
 const Li = styled.li`
-  :not(:last-child) {
+  &:not(:last-child) {
     margin-right: 0.75rem;
   }
 `;
@@ -47,7 +47,7 @@ const StyledLink = styled(Link)`
   color: ${theme.colors.black};
   text-decoration: none;
 
-  :hover {
+  &:hover {
     text-decoration: underline;
   }
 `;

@@ -312,7 +312,7 @@ export default css`
    * 2. Change font properties to inherit in Safari.
    */
 
-  ::-webkit-file-upload-button {
+  &::-webkit-file-upload-button {
     -webkit-appearance: button; /* 1 */
     font: inherit; /* 2 */
   }
