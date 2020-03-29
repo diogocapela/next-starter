@@ -5,6 +5,11 @@ import styled from '@emotion/styled';
 
 const A = styled.a`
   display: inline-block;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
 `;
 
 const Link = (props) => {
@@ -35,7 +40,7 @@ const Link = (props) => {
       {children}
     </A>
   ) : (
-    <NextLink as={as} href={href}>
+    <NextLink as={as} href={href} passHref>
       <A aria-label={title} title={title} onClick={handleClick} {...rest}>
         {children}
       </A>
