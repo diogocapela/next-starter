@@ -11,11 +11,13 @@ const PageSEO = (props) => {
 
   return (
     <Head>
+      {/* Page Title */}
       <title>{curatedTitle}</title>
       <meta name="twitter:title" content={curatedTitle} />
       <meta property="og:title" content={curatedTitle} />
       <meta itemProp="name" content={curatedTitle} />
 
+      {/* Page Description */}
       <meta name="description" content={description} />
       <meta name="summary" content={description} />
       <meta name="subject" content={description} />
@@ -25,6 +27,7 @@ const PageSEO = (props) => {
       <meta property="og:description" content={description} />
       <meta itemProp="description" content={description} />
 
+      {/* Page Thumbnail */}
       <meta name="twitter:image:src" content={thumbnail} />
       <meta property="og:image" content={thumbnail} />
       <meta itemProp="image" content={thumbnail} />

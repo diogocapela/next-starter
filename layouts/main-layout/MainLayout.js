@@ -6,8 +6,6 @@ import Navbar from '@ns/components/navbar';
 import Footer from '@ns/components/footer';
 import theme from '@ns/theme';
 
-const WrapperDiv = styled.div``;
-
 const Div = styled.div`
   background: ${theme.colors.white};
   padding-top: 2rem;
@@ -18,11 +16,11 @@ const MainLayout = (props) => {
   const { children } = props;
 
   return (
-    <WrapperDiv>
+    <>
       <Navbar />
       <Div>{children}</Div>
       <Footer />
-    </WrapperDiv>
+    </>
   );
 };
 

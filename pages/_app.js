@@ -21,6 +21,8 @@ import {
 } from '@ns/config/settings';
 import withStore from '@ns/redux/withStore';
 import globalStyles from '@ns/theme/styles';
+import CookieBanner from '@ns/components/cookie-banner';
+import GoogleAnalytics from '@ns/components/google-analytics';
 
 class App extends NextApp {
   static async getInitialProps({ Component, ctx }) {
@@ -115,6 +117,8 @@ class App extends NextApp {
         </NextHead>
         <Global styles={globalStyles} />
         <Component {...pageProps} />
+        <CookieBanner />
+        <GoogleAnalytics />
       </Provider>
     );
   }

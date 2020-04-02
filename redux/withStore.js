@@ -21,7 +21,7 @@ function getOrCreateStore(initialState) {
 export default (App) => {
   return class AppWithRedux extends Component {
     static async getInitialProps(appContext) {
-      // Get or Create the store with `undefined` as initialState
+      // Get or create the store with undefined as initialState
       // This allows you to set a custom default initialState
       const store = getOrCreateStore();
 

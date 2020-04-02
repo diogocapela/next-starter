@@ -1,6 +1,5 @@
-import fetch from 'isomorphic-unfetch';
+import request from '@ns/redux/request';
 
-import { POSTS_API } from '@ns/config/endpoints';
 import * as actionTypes from './actionTypes';
 
 export const fetchPosts = () => async (dispatch) => {
@@ -9,10 +8,9 @@ export const fetchPosts = () => async (dispatch) => {
   });
 
   try {
-    const res = await fetch(POSTS_API, {
+    const data = await request('/posts', {
       method: 'GET',
     });
-    const data = await res.json();
 
     dispatch({
       type: actionTypes.FETCH_POSTS_SUCCESS,

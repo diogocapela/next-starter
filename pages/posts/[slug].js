@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
+import styled from '@emotion/styled';
 
 import { usePosts, actions } from '@ns/redux/redux-posts';
 import Layout from '@ns/layouts/main-layout';

@@ -1,1 +1,2 @@
+export const DEVICE_HASH = 'DEVICE_HASH';
 export const USER_ACCEPTS_COOKIES = 'USER_ACCEPTS_COOKIES';

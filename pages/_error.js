@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
@@ -9,6 +9,7 @@ import theme from '@ns/theme';
 const H1 = styled.h1`
   color: ${theme.colors.black};
   text-align: center;
+  font-weight: bold;
 `;
 
 const P = styled.p`
@@ -17,28 +18,26 @@ const P = styled.p`
   font-size: 2rem;
 `;
 
-class Error extends Component {
-  static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+const ErrorPage = (props) => {
+  const { statusCode } = props;
 
-    return { statusCode };
-  }
+  return (
+    <Layout>
+      <PageSEO title={`Error ${statusCode}`} />
+      <H1>{statusCode}</H1>
+      <P>Whoops, something went wrong!</P>
+    </Layout>
+  );
+};
 
-  render() {
-    const { statusCode } = this.props;
+ErrorPage.getInitialProps = async ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : null;
 
-    return (
-      <Layout>
-        <PageSEO title={statusCode ? `Server Error ${statusCode}` : 'Client Error'} />
-        <H1>{statusCode}</H1>
-        <P>Whoops, Something Went Wrong!</P>
-      </Layout>
-    );
-  }
-}
+  return { statusCode };
+};
 
-Error.propTypes = {
+ErrorPage.propTypes = {
   statusCode: PropTypes.number,
 };
 
-export default Error;
+export default ErrorPage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { WEBSITE_NAME } from '@ns/config/settings';
+import { WEBSITE_NAME, MAIN_LINKS } from '@ns/config/settings';
 import Container from '@ns/components/container';
 import Link from '@ns/components/link';
 import theme from '@ns/theme';
@@ -52,12 +52,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const NAVBAR_LINKS = [
-  { url: '/about', title: 'About' },
-  { url: '/posts', title: 'Posts' },
-  { url: '/404', title: '404' },
-];
-
 const Navbar = () => {
   return (
     <WrapperNav>
@@ -67,7 +61,7 @@ const Navbar = () => {
           <LogoSpan>{WEBSITE_NAME}</LogoSpan>
         </LogoStyledLink>
         <Ul>
-          {NAVBAR_LINKS.map(({ url, title }, i) => (
+          {MAIN_LINKS.map(({ url, title }, i) => (
             <Li key={i}>
               <StyledLink href={url}>{title}</StyledLink>
             </Li>
